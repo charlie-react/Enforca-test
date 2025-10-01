@@ -31,7 +31,7 @@ export default function SubNav() {
 
 
             </div>
-            <div className="flex w-40 gap-3 items-center justify-center p-3 shadow-lg bg-white text-slate-700 rounded-md md:mr-3 cursor-pointer ">
+            <div className="flex w-40 gap-3 items-center justify-center p-3 shadow-lg bg-white text-slate-700 rounded-md md:mr-3 cursor-pointer mt-3 mb-3 md:mb-0 md:mt-0 ">
                 <Upload size={20} />
                 <p>
                     Import/Export
