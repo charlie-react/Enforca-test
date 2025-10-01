@@ -9,7 +9,7 @@ import UserData from "./components/UserData";
 export default function Home() {
   return (
     
-      <div className="flex flex-col gap-4 mx-auto w-120 justify-center shadow-md p-12 rounded-3xl bg-teal-400 text-slate-700 items-center text-center mt-8 ">
+      <div className="flex flex-col gap-4 mx-auto w-60 md:w-120 justify-center shadow-md p-6 md:p-12 rounded-3xl bg-teal-400 text-slate-700 items-center text-center mt-8 ">
         <span className="">
           This is the Home Page
         </span>
