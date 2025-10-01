@@ -13,13 +13,13 @@ export default function MainData({ date, name, email, status, number, userId, us
             <p >
                 {userId}
             </p>
-            <p className="text-nowrap mr-3 md:mr-0 ">
+            <p className="text-wrap md:text-nowrap ">
                 {name}
             </p>
             <p className=" truncate">
                 {email}
             </p>
-            <p  className="mr-3 md:mr-0">
+            <p  className="text-wrap ">
                 {number}
             </p>
             <p className="text-center" >
