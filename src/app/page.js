@@ -9,11 +9,11 @@ import UserData from "./components/UserData";
 export default function Home() {
   return (
     
-      <div className="flex flex-col gap-4 mx-auto w-60 md:w-120 justify-center shadow-md p-6 md:p-12 rounded-3xl bg-teal-400 text-slate-700 items-center text-center mt-8 ">
+      <div className="flex flex-col gap-4 mx-auto w-80 md:w-120 justify-center shadow-md p-6 md:p-12 rounded-3xl bg-teal-400 text-slate-700 items-center text-center mt-8 ">
         <span className="">
           This is the Home Page
         </span>
-        <Link href={"/users"} className="mt-5">
+        <Link href={"/users"} className="mt-5 text-xs md:text-sm">
           Click <span className="border-1 border-teal-500 rounded-sm shadow-xs p-3 italic">
             User Management
           </span> to go to user page..
