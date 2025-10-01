@@ -39,7 +39,7 @@ export default function Pagination({ currentPage, totalPages, setCurrentPage }) 
         <div className="flex justify-around gap-2 mt-4 min-w-[200px] md:min-w-[600px] ">
 
             <div className="flex gap-0.5 md:gap-1.5 cursor-pointer text-teal-800 font-semibold">
-                <ArrowLeft size={20} />
+                <ArrowLeft size={20} onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} />
                 <p
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                     disabled={currentPage === 1}
@@ -77,7 +77,7 @@ export default function Pagination({ currentPage, totalPages, setCurrentPage }) 
                 >
                     Next 15
                 </p>
-                <ArrowRight size={20} />
+                <ArrowRight size={20} onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} />
             </div>
         </div>
     );
