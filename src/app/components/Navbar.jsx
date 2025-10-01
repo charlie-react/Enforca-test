@@ -1,45 +1,50 @@
+"use client"
+
 import {  Bell, ChevronDown,  } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+    const pathName = usePathname()
     return (
-        <nav className="mb-3 px-5">
-            <ul className="flex bg-green-950 gap-2 py-3 px-1 items-center text-slate-300 text-sm justify-around cursor-pointer">
+        <nav className="mb-3 px-3 md:px-5">
+            <ul className="grid grid-cols-2  sm:flex bg-green-950 gap-1 md:gap-2 py-3 px-3 md:px-1 items-center text-slate-300 text-sm justify-around cursor-pointer">
                 <li>
-                    <a>
+                    <Link href={"/"}>
                         Dashboard
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a className="active:text-yellow-300">
+                    <Link className={`${pathName === "/users" && "text-yellow-200 transition-all duration-500" }`} href={"/users"}>
                         User Management
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a>
+                    <Link href={""}>
                         Bookings
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a>
+                    <Link href={""}>
                         Reports and Analytics
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a>
+                    <Link href={""}>
                         Payments and Payouts
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a>
+                    <Link href={""}>
                         Membership Plans
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a>
+                    <Link href={""}>
                         Services
-                    </a>
+                    </Link>
                 </li>
-                <li className="flex gap-2 items-center p-2 justify-between">
+                <li className="flex md:gap-2 items-center md:p-2 md:justify-between">
                     <a>
                         System Management
                     </a>
@@ -47,9 +52,9 @@ export default function Navbar() {
                         <ChevronDown size={20} className="text-white" />
                     </span>
                 </li>
-                <li className="flex gap-5 justify-between items-center p-2">
-                    <Bell size={20}/>
-                    <img src="/meeenow.jpg" alt="user" className="w-8 h-8 rounded-full aspect-square object-cover"/>
+                <li className="flex gap-1 md:gap-4 md:justify-between items-center p-2">
+                    <Bell size={20} className="w-4 md:w-8"/>
+                    <img src="/meeenow.jpg" alt="user" className=" w-5 h-5 md:w-8 md:h-8 rounded-full aspect-square object-cover"/>
                 </li>
             </ul>
         </nav>

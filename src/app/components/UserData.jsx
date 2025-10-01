@@ -15,10 +15,14 @@ export default function UserData() {
     const endIndex = startIndex + usersPerPage
     const currentUsers = users.slice(startIndex, endIndex)
     const totalPages = Math.ceil(users.length / usersPerPage)
+    const [openModalId, setOpenModalId] = useState(null);
+    const handleToggleModal = (userid) => {
+        setOpenModalId(prev => (prev === userid ? null : userid));
+    };
     return (
         <div className="flex flex-col px-3">
             {headers.map(({ id, icon: Icon, date, name, userId, userType, phone, email, status }) => (
-                <div key={id} className="grid gap-3 grid-cols-7 bg-green-700 text-white p-4 text-sm font-semibold">
+                <div key={id} className="grid grid-cols-4 gap-3 md:grid-cols-7 bg-green-700 text-white p-4 text-sm font-semibold">
                     <h3 >{date} {Icon && <Icon className="inline-block" size={16} />}</h3>
                     <h3 className="flex items-center gap-2">{userId} {Icon && <Icon className="inline-block" size={16} />}</h3>
                     <h3 className="flex items-center gap-2" >{name} {Icon && <Icon className="inline-block" size={16} />}</h3>
@@ -30,11 +34,11 @@ export default function UserData() {
             ))}
             <div className="flex flex-1 flex-col gap-5 p-4 justify-center items-center shadow-lg">
                 {currentUsers.map(({ id, dateSubmitted, name, userId, userType, phoneNumber, status, email }) => (
-                    <MainData key={id} date={dateSubmitted} name={name} number={phoneNumber} userId={userId} userType={userType} status={status} email={email} />
+                    <MainData key={id} date={dateSubmitted} name={name} number={phoneNumber} userId={userId} userType={userType} status={status} email={email} modalOpen={openModalId === id} onToggleModal={() => handleToggleModal(id)} />
                 ))}
                 <div className="flex justify-around gap-5 mt-4 w-full">
 
-                    <div className="flex gap-2 mt-6">
+                    <div className="mt-6">
                         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
                         {/* {Array.from({ length: totalPages }, (_, i) => (
                         <button
